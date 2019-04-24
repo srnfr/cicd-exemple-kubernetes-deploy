@@ -17,7 +17,9 @@ jobs:
           name: Push Docker Image
           command: |
             echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker tag $IMAGE_NAME:latest $IMAGE_NAME:$CIRCLE_SHA1
             docker push $IMAGE_NAME:latest
+<<<<<<< HEAD:.circleci/config.yaml
       - run:
           name: Install envsubst
           command: |
@@ -30,6 +32,9 @@ jobs:
       - run:
           name: Deploy Code
           command: ./scripts/ci-deploy.sh
+=======
+            docker push $IMAGE_NAME:$CIRCLE_SHA1
+>>>>>>> 88ceba6f08cafc49f1c0efeab70268af724c1764:.circleci/config.yml
 workflows:
   version: 2
   build-master:
