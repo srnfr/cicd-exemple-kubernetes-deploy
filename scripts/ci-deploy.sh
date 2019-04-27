@@ -20,6 +20,14 @@ mv ./kube/cicd-deployment.yml.out ./kube/cicd-deployment.yml
 
 echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
 
+echo "Debug"
+echo "---"
+cat cert.crt
+echo "---"
+echo "SERVER = $KUBERNETES_SERVER"
+echo "TOKEN = $KUBERNETES_TOKEN"
+echo "---"
+
 ./kubectl \
   --kubeconfig=/dev/null \
   --server=$KUBERNETES_SERVER \
