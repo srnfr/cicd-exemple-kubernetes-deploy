@@ -4,7 +4,7 @@ set -e
 
 
 ### SRN BYPASS ####
-exit
+#exit
 ####################
 
 COMMIT_SHA1=$CIRCLE_SHA1
