@@ -28,7 +28,7 @@ echo "SERVER = $KUBERNETES_SERVER"
 echo "TOKEN = $KUBERNETES_TOKEN"
 echo "---"
 
-./kubectl \
+./kubectl --v 6 \
   --kubeconfig=/dev/null \
   --server=$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
