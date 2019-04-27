@@ -30,7 +30,7 @@ echo "---"
 
 ./kubectl --v 6 \
   --kubeconfig=/dev/null \
-  --server=$KUBERNETES_SERVER \
+  --server=https://$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
   apply -f ./kube/
