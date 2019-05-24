@@ -6,7 +6,8 @@ metadata:
   labels:
     app: do-kubernetes-sample-app
 spec:
-  type: ClusterIP
+##  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: http
