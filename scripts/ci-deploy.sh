@@ -25,6 +25,7 @@ echo "---"
 cat cert.crt
 echo "---"
 echo "SERVER = $KUBERNETES_SERVER"
+echo "---"
 echo "TOKEN = $KUBERNETES_TOKEN"
 echo "---"
 
