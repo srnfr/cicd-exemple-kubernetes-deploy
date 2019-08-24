@@ -22,6 +22,11 @@ echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
 
 echo "Debug"
 echo "---"
+echo "COMMIT_SHA1 = $COMMIT_SHA1"
+echo "---"
+echo "IMAGE dans KUBE MANIFESTS : "
+grep image ./kube/cicd-deployment.yml
+echo "---"
 cat cert.crt
 echo "---"
 echo "SERVER = $KUBERNETES_SERVER"
