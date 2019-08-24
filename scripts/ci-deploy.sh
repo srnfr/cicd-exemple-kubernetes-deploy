@@ -32,10 +32,13 @@ echo "SERVER = $KUBERNETES_SERVER"
 echo "---"
 echo "TOKEN = $KUBERNETES_TOKEN"
 echo "---"
-
 ./kubectl --v 6 \
   --kubeconfig=/dev/null \
   --server=https://$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
   apply -f ./kube/
+echo "Pause 5sec"
+sleep 5
+echo "LIST ALL IMAGES OF RUNNING PODS : "
+./kubectl get pods -o=jsonpath={..image} | tr -s '[[:space:]]' '\n' |sort |uniq -c
