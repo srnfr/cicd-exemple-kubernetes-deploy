@@ -24,8 +24,7 @@ echo "Debug"
 echo "---"
 echo "COMMIT_SHA1 = $COMMIT_SHA1"
 echo "---"
-echo "IMAGE dans KUBE MANIFESTS : "
-grep image ./kube/cicd-deployment.yml
+echo "IMAGE dans KUBE MANIFESTS : \n $(grep image ./kube/cicd-deployment.yml)"
 echo "---"
 cat cert.crt
 echo "---"
