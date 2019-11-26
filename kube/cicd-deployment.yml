@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: do-kubernetes-sample-app
-          image: reytans/kub-cicd-exemple:latest
-          ##image: reytans/kub-cicd-exemple:$COMMIT_SHA1
+          ##image: reytans/kub-cicd-exemple:latest
+          image: reytans/kub-cicd-exemple:$COMMIT_SHA1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
